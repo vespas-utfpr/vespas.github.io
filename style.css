@@ -1,0 +1,207 @@
+:root {
+    --dark-green: #0a2e1a;
+    --medium-green: #1a4d2e;
+    --light-green: #27ae60;
+    --accent-yellow: #f39c12;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(135deg, var(--dark-green) 0%, var(--medium-green) 100%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #fff !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--dark-green) 0%, var(--medium-green) 50%, var(--light-green) 100%);
+    color: white;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(45deg, transparent 45%, rgba(255, 255, 255, 0.03) 50%, transparent 55%),
+        linear-gradient(-45deg, transparent 45%, rgba(255, 255, 255, 0.03) 50%, transparent 55%);
+    background-size: 30px 30px;
+    opacity: 0.5;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section .btn-warning {
+    background-color: var(--accent-yellow);
+    border: none;
+    font-weight: bold;
+    padding: 12px 40px;
+    transition: all 0.3s ease;
+}
+
+.hero-section .btn-warning:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.logo-main {
+    max-width: 300px;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Cards */
+.card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--medium-green), var(--light-green));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: white;
+}
+
+.card-title {
+    color: var(--medium-green);
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Tip Cards */
+.tip-card {
+    background: linear-gradient(to right, var(--medium-green), var(--light-green));
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateX(10px);
+}
+
+.tip-card h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.tip-card p {
+    margin: 0;
+    opacity: 0.95;
+}
+
+/* Alert Section */
+.alert-section {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: white;
+}
+
+.alert-section h3 {
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, var(--dark-green), var(--medium-green));
+    color: white;
+}
+
+/* Section Headings */
+h2 {
+    color: var(--medium-green);
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, var(--accent-yellow), var(--light-green));
+    border-radius: 2px;
+}
+
+.text-center h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 50px 0;
+        text-align: center;
+    }
+    
+    .logo-main {
+        max-width: 200px;
+        margin-top: 30px;
+    }
+    
+    .tip-card:hover {
+        transform: none;
+    }
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
